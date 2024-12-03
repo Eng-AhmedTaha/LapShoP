@@ -1,0 +1,14 @@
+{
+  "Items": [
+    "Show"
+    :
+    true,
+    "Add"
+    :
+    false,
+    "Edit"
+    :
+    false,
+    "Delete":true
+  ]
+}

@@ -1,0 +1,212 @@
+﻿@model VmHomePage
+
+<!-- header end -->
+<!-- Home slider -->
+<section class="p-0 layout-7">
+    <div class="slide-1 home-slider">
+        @foreach(var slider in Model.lstSliders)
+        {
+            <div>
+                <div class="home text-left">
+                    <img src="~/Uploads/Sliders/@slider.ImageName" alt="" class="bg-img blur-up lazyload">
+                    <div class="container-fluid custom-container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="slider-contain">
+                                    <div>
+                                        <h4>@slider.Title</h4>
+                                        <h1>@slider.Description</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- Home slider end -->
+<!-- collection banner -->
+<section class="banner-padding banner-furniture ratio2_1">
+    <div class="container-fluid">
+        <div class="row partition4">
+            @foreach(var category in Model.lstCategories)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <a href="/Items/ItemList/@category.CategoryId">
+                        <div class="collection-banner p-right text-right">
+                            <div class="img-part">
+                                <img src="~/Uploads/Categories/@category.ImageName"
+                                 class="img-fluid blur-up lazyload bg-img">
+                            </div>
+                            <div class="contain-banner banner-4">
+                                <div>
+                                    <h4>@category.CategoryName</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- collection banner end -->
+<!-- Paragraph-->
+<div class="title1 section-t-space">
+    <h4>special offer</h4>
+    <h2 class="title-inner1">today's deal</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="product-para">
+                <p class="text-center">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Paragraph end -->
+<!-- Product section -->
+<section class="pt-0 section-b-space ratio_asos">
+    <div class="container">
+        <div class="row game-product grid-products">
+            @foreach (var item in Model.lstAllItems)
+            {
+                <div class="product-box col-xl-2 col-lg-3 col-sm-4 col-6">
+                    <partial name="ItemBox" model="@item" />
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- Product section end -->
+<!-- Parallax banner -->
+<section class="p-0">
+    <div class="full-banner parallax text-center p-right">
+        <img src="~/Fontend/images/parallax/28.jpg" alt="" class="bg-img blur-up lazyload">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="banner-contain">
+                        <h2>sale</h2>
+                        <h3>fashion trends</h3>
+                        <h4>special offer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Parallax banner end -->
+<!-- product section start -->
+<section class="tools_product bg-title section-b-space">
+    <div class="container">
+        <div class="row multiple-slider">
+            <div class="col-xl-4 col-lg-4 col-md-12">
+                <div class="theme-card">
+                    <h5 class="title-border">Under $20 | Free delivery</h5>
+                    <div class="offer-slider slide-1">
+                        <div>
+                            @foreach (var item in Model.lstFreeDelivry)
+                            {
+                                <div class="media">
+                                    <a href="product-page(no-sidebar).html">
+                                        <img class="img-fluid blur-up lazyload"
+                                         src="~/Fontend/images/marketplace/6.jpg" alt="">
+                                    </a>
+                                    <div class="media-body align-self-center">
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <a href="product-page(no-sidebar).html">
+                                            <h6>@item.ItemName</h6>
+                                        </a>
+                                        <h4>$@item.SalesPrice <del>$@item.SalesPrice</del></h4>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div>
+                            @foreach (var item in Model.lstFreeDelivry)
+                            {
+                                <div class="media">
+                                    <a href="product-page(no-sidebar).html">
+                                        <img class="img-fluid blur-up lazyload"
+                                         src="~/Fontend/images/marketplace/6.jpg" alt="">
+                                    </a>
+                                    <div class="media-body align-self-center">
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <a href="product-page(no-sidebar).html">
+                                            <h6>@item.ItemName</h6>
+                                        </a>
+                                        <h4>$@item.SalesPrice <del>$@item.SalesPrice</del></h4>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-12">
+                <div class="theme-tab">
+                    <div class="bg-title-part">
+                        <h5 class="title-border">RECOMMENDATIONS FOR YOU</h5>
+                        <ul class="tabs tab-title">
+                            <li class="current">
+                                <a href="tab-4">New Products</a>
+                            </li>
+                            <li class="">
+                                <a href="tab-5">Featured Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content-cls ratio_asos">
+                        <div id="tab-4" class="tab-content active default">
+                            <div class="product-4 game-product product-m no-arrow">
+                                @foreach (var item in Model.lstRecommendedItems)
+                                {
+                                    <div class="product-box">
+                                        <partial name="ItemBox" model="@item" />
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+                        <div id="tab-5" class="tab-content">
+                            <div class="product-4 game-product product-m no-arrow">
+                                @foreach (var item in Model.lstNewItems)
+                                {
+                                    <div class="product-box">
+                                        <partial name="ItemBox" model="@item" />
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-tools">
+                    <img src="~/Fontend/images/offer-banner1.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product section end -->
+
